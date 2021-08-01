@@ -15,22 +15,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cf1de2fe8c75bc145a2f577add951f8134889b4795d47466a54a5c846d691693"
 
 [[package]]
-name = "byteorder"
-version = "1.4.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "14c189c53d098945499cdfa7ecc63567cf3886b3332b312a5b4585d8d3a6a610"
-
-[[package]]
-name = "bytes"
-version = "0.4.12"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "206fdffcfa2df7cbe15601ef46c813fce0965eb3286db6b56c583b814b51c81c"
-dependencies = [
- "byteorder",
- "iovec",
-]
-
-[[package]]
 name = "bytes"
 version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -41,12 +25,6 @@ name = "cfg-if"
 version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
-
-[[package]]
-name = "futures"
-version = "0.1.31"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3a471a38ef8ed83cd6e40aa59c1ffe17db6855c18e3604d9c4ed8c08ebc28678"
 
 [[package]]
 name = "futures"
@@ -158,15 +136,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bee0328b1209d157ef001c94dd85b4f8f64139adb0eac2659f4b08382b2f474d"
 dependencies = [
  "cfg-if",
-]
-
-[[package]]
-name = "iovec"
-version = "0.1.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b2b3ea6ff95e175473f8ffe6a7eb7c00d054240321b84c57051175fe3c1e075e"
-dependencies = [
- "libc",
 ]
 
 [[package]]
@@ -367,7 +336,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4b7b349f11a7047e6d1276853e612d152f5e8a352c61917887cc2169e2366b4c"
 dependencies = [
  "autocfg",
- "bytes 1.0.1",
+ "bytes",
  "libc",
  "memchr",
  "mio",
@@ -378,17 +347,6 @@ dependencies = [
  "signal-hook-registry",
  "tokio-macros",
  "winapi",
-]
-
-[[package]]
-name = "tokio-io"
-version = "0.1.13"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "57fc868aae093479e3131e3d165c93b1c7474109d13c90ec0dda2a1bbfff0674"
-dependencies = [
- "bytes 0.4.12",
- "futures 0.1.31",
- "log",
 ]
 
 [[package]]
@@ -406,9 +364,8 @@ dependencies = [
 name = "tokio_user_input"
 version = "0.1.0"
 dependencies = [
- "futures 0.3.16",
+ "futures",
  "tokio",
- "tokio-io",
 ]
 
 [[package]]
